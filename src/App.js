@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Tab from './components/Tab';
 
+import data from './data';
+import { useState } from 'react';
+import ButtonGroup from './components/ButtonGroup';
 function App() {
+  const [tab,setTab] = useState(data.simulation.children)
+  const [tabToDisplay,setTabToDisplay] = useState(data.simulation.children[0])
+ 
+  const getTab=(tabTitle) =>{
+    setTabToDisplay(tab.find(tab=>tab.title===tabTitle))
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div className='container'>
+    <ButtonGroup tabs={tab} getTabTitle={getTab}/>
+  <Tab tabData={tabToDisplay}/>
+  </div>
+ 
   );
 }
 
