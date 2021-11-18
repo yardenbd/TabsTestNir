@@ -1,13 +1,11 @@
 import React from 'react'
-import Label from './Label'
+import { useInput } from '../InputValueContext'
+
 
 const Button = (props) => {
-    const getData =(input,label)=>{
-        console.log(input,label)
-    }
-    
+  const {clickHandler,disableClick}=useInput()
     return (
-        <button id={props.id} onClick={()=>getData(props.click.source_id,props.click.target_id)}> {props.text}</button>
+        <button id={props.id} onClick={clickHandler} onBlur={disableClick}> {props.text}</button>
     )
 }
 

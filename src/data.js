@@ -36,15 +36,7 @@ module.exports = {
       },
       
       {
-        components: [{
-          base_component: "MyButton",
-          text: "Customer validation",
-          id: "btn1",
-          click: {
-            source_id: "in1",
-            target_id: "lbl1",
-          },
-        }],
+        components: [],
         title: "Tab 3",
       },
       

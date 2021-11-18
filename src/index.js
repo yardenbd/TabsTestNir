@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import InputValueProvider from './InputValueContext';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <InputValueProvider>
     <App />
-  </React.StrictMode>,
+  </InputValueProvider>,
   document.getElementById('root')
 );
 
